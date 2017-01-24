@@ -19,12 +19,32 @@ body {
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
-input[type="text"],
+/* input[type="text"],*/
 input[type="password"],
 input[type="email"],
 input[type="tel"],
 input[type="select"] {
     max-width: 280px;
+}
+
+    .jumbotron {
+        /**background-image:url("../Images/") */
+    }
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 54.25%;
+    padding-top: 25px;
+    height: 0;
+	overflow:hidden;
+}
+
+.videoWrapper iframe, .videoWrapper object, .videoWrapper embed {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
 }
 
 /* Responsive: Portrait tablets and up */

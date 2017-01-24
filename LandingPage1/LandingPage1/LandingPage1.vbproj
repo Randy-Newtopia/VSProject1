@@ -236,6 +236,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="BodyTraceDashboard.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -281,7 +282,9 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
@@ -399,6 +402,7 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Content Include="App_Code\BodyTrace.vb" />
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\IdentityConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
@@ -411,6 +415,13 @@
     </Compile>
     <Compile Include="App_Start\Startup.Auth.vb" />
     <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="BodyTraceDashboard.aspx.designer.vb">
+      <DependentUpon>BodyTraceDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BodyTraceDashboard.aspx.vb">
+      <DependentUpon>BodyTraceDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Contact.aspx.designer.vb">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
@@ -428,7 +439,7 @@
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\IdentityModels.vb" />
+    <Compile Include="Content\Models\IdentityModels.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

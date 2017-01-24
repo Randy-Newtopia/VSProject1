@@ -1,32 +1,17 @@
 ﻿<%@ Page Title="Home Page" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.vb" Inherits="LandingPage1._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <header>
-      <div class="logo">
-        <img src="https://stg-start.newtopia.com/bigy/assets/images/logo.png">
-      </div>
-
-      <div class="nav nav-desktop">
-        <a href="#our-approach">Our approach</a>
-        <a href="#smart-technology">Smarth Tech</a>
-        <a href="#chatter">Chatter</a>
-        <a href="https://stg-start.newtopia.com/#/login">Login</a>
-        <a class="join-now join_now_button" href="#">Join Now</a>
-      </div>
-
-      <div class="nav nav-mobile">
-        <a href="https://stg-start.newtopia.com/#/login">Login</a>
-        <a class="join-now join_now_button" href="#">Join Now</a>
-      </div>
-    </header>
 
 
     <div class="jumbotron">
-        <h1>NEWTOPIA HOME ASP PAGE</h1>
+        <h1>NEWTOPIA TEST HOME ASP PAGE</h1>
         <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
         <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
-
+    
+    <div class="videoWrapper">       
+        <iframe width="1110" height="627" src="https://www.youtube.com/embed/frC5mpTDu-A" frameborder="0" allowfullscreen></iframe>
+    </div>
     <div class="row">
         <div class="col-md-4">
             <h2>Getting Started</h2>
