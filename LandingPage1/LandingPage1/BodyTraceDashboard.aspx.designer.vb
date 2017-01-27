@@ -68,11 +68,11 @@ Partial Public Class BodyTraceDashboard
     Protected WithEvents btnDeserialize As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''txtDeserialized control.
+    '''gvFeed control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtDeserialized As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents gvFeed As Global.System.Web.UI.WebControls.GridView
 End Class
