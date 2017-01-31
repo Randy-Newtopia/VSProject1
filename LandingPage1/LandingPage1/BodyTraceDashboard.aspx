@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="BodyTraceDashboard.aspx.vb" Inherits="LandingPage1.BodyTraceDashboard" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Body Trace Dashboard</h1>
     <hr />
     <div class="form-group">
@@ -33,8 +33,8 @@
     </div>
     <br />
     <div class="form-group">
-            <label for="usr">Deserialized:</label>
-            <asp:GridView ID="gvFeed" runat="server"></asp:GridView>
+        <label for="usr">Deserialized:</label>
+        <asp:GridView ID="gvFeed" runat="server" CellPadding="4"></asp:GridView>
     </div>
     
 </asp:Content>

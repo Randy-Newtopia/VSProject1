@@ -10,38 +10,35 @@ Public Class BodyTraceDashboard
 #Region "Json Object 2 Levels"
 
     Public Class WeightValues
-        Public Property unit As Integer
-        Public Property tare As Integer
         Public Property weight As Integer
+        Public Property unit As Integer
     End Class
 
     Public Class ScaleData
+
         Public Property imei As String
-        Public Property ts As Long
+        Public Property ts As Double
         Public Property batteryVoltage As Integer
         Public Property signalStrength As Integer
         Public Property values As WeightValues
         Public Property rssi As Integer
-        Public Property deviceId As Long
+
     End Class
 
     Public Class ScaleDataFlat
-        Public Property deviceId As Long
+
         Public Property imei As String
-        Public Property ts As Long
+        Public Property timestamp As DateTime
+
         Public Property batteryVoltage As Integer
         Public Property signalStrength As Integer
-        Public Property values As WeightValues
-        Public Property rssi As Integer
 
-        'Public Property tare As Integer
         Public Property weight As Integer
-        Public Property unit As Integer
+        Public Property unitOfMeasure As String
+
     End Class
 
 #End Region
-
-
 
 
     Public Class BodyTraceFeed
@@ -124,49 +121,41 @@ Public Class BodyTraceDashboard
         Dim BF As BodyTraceFeed = New BodyTraceFeed
         Dim ScaleDataFeed As List(Of ScaleData) = BF.GetBodyTrace_ScaleDataFeeds(txtResponse.Text)
 
-        'Flatten from 2 Level to 1 Level
-        Dim ScaleDataFeedFlat As List(Of ScaleDataFlat) = New List(Of ScaleDataFlat)
-        For Each f As ScaleData In ScaleDataFeed
-            Dim s As ScaleDataFlat = New ScaleDataFlat()
-            s.deviceId = f.deviceId
-            s.batteryVoltage = f.batteryVoltage
-            s.imei = f.imei
-            s.rssi = f.rssi
-            s.signalStrength = f.signalStrength
-            s.ts = f.ts
+        If ScaleDataFeed IsNot Nothing Then
+            'Flatten from 2 Level to 1 Level
+            Dim ScaleDataFeedFlat As List(Of ScaleDataFlat) = New List(Of ScaleDataFlat)
+            For Each f As ScaleData In ScaleDataFeed
+                Dim s As ScaleDataFlat = New ScaleDataFlat()
 
-            If f.values IsNot Nothing Then
-                's.tare = f.values.tare
-                s.unit = f.values.unit
-                s.weight = f.values.weight
-            Else
-                's.tare = 0
-                s.unit = 0
-                s.weight = 0
-            End If
-            ScaleDataFeedFlat.Add(s)
-        Next
+                s.batteryVoltage = f.batteryVoltage
+                s.imei = f.imei
+                s.signalStrength = f.signalStrength
+                s.timestamp = UnixToDateTime(f.ts)
+                s.unitOfMeasure = "pounds"
+                s.weight = f.values.weight * 0.00220462
+                ScaleDataFeedFlat.Add(s)
 
-        gvFeed.DataSource = ScaleDataFeedFlat
-        gvFeed.DataBind()
+            Next
+            gvFeed.DataSource = ScaleDataFeedFlat
+            gvFeed.DataBind()
+
+        Else
+            'Render Error
+            gvFeed.DataSource = Nothing
+            gvFeed.DataBind()
+        End If
 
     End Sub
 
+    Public Function UnixToDateTime(ByVal strUnixTime As Double) As DateTime
 
-    Public Shared Function ConvertToDataTable(Of T)(ByVal list As IList(Of T)) As DataTable
-        Dim table As New DataTable()
-        Dim fields() As FieldInfo = GetType(T).GetFields()
-        For Each field As FieldInfo In fields
-            table.Columns.Add(field.Name, field.FieldType)
-        Next
-        For Each item As T In list
-            Dim row As DataRow = table.NewRow()
-            For Each field As FieldInfo In fields
-                row(field.Name) = field.GetValue(item)
-            Next
-            table.Rows.Add(row)
-        Next
-        Return table
+        Dim nTimestamp As Double = strUnixTime
+        Dim nDateTime As System.DateTime = New System.DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc)
+        nDateTime = nDateTime.AddSeconds(Math.Round(nTimestamp / 1000))
+
+        Return nDateTime
+
     End Function
+
 
 End Class

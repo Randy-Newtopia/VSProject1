@@ -11,23 +11,23 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class SiteMaster
+Partial Public Class DailyGoals
     
     '''<summary>
-    '''HeadContent control.
+    '''oTimeLine control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents HeadContent As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents oTimeLine As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
-    '''MainContent control.
+    '''oScrollContent control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents MainContent As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents oScrollContent As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class
