@@ -254,6 +254,8 @@
     </Content>
     <Content Include=".DS_Store" />
     <Content Include="Img\cd-arrow.svg" />
+    <Content Include="JsonObj\Goals_Payload.txt" />
+    <Content Include="JsonObj\MealPhoto_Payload.txt" />
     <Content Include="README.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -443,7 +445,6 @@
     </Compile>
     <Compile Include="DailyGoals.aspx.vb">
       <DependentUpon>DailyGoals.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.vb">
       <SubType>ASPXCodeBehind</SubType>
