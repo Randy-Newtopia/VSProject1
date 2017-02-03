@@ -7,6 +7,9 @@ Imports System.Reflection
 Public Class BodyTraceDashboard
     Inherits System.Web.UI.Page
 
+
+
+
 #Region "Json Object 2 Levels"
 
     Public Class WeightValues
@@ -41,6 +44,530 @@ Public Class BodyTraceDashboard
 #End Region
 
 
+    Private Function BodytracePayloadSample() As String
+        Return "
+                {
+                  'targetWeights' : [ {
+                    'weight' : 203.8,
+                    'targetdatetime' : 1497298966000
+                  } ],
+                  'status' : 'success',
+                  'message' : 'User has 127 records In that Date range',
+                  'data' : [ {
+                    'value' : 184.70,
+                    'units' : 'pounds',
+                    'recordedTime' : 1459766160000
+                  }, {
+                    'value' : 151.90,
+                    'units' : 'pounds',
+                    'recordedTime' : 1459806540000
+                  }, {
+                    'value' : 186.50,
+                    'units' : 'pounds',
+                    'recordedTime' : 1459852200000
+                  }, {
+                    'value' : 151.00,
+                    'units' : 'pounds',
+                    'recordedTime' : 1459917420000
+                  }, {
+                    'value' : 186.10,
+                    'units' : 'pounds',
+                    'recordedTime' : 1460024580000
+                  }, {
+                    'value' : 185.80,
+                    'units' : 'pounds',
+                    'recordedTime' : 1460030760000
+                  }, {
+                    'value' : 185.40,
+                    'units' : 'pounds',
+                    'recordedTime' : 1460116980000
+                  }, {
+                    'value' : 138.70,
+                    'units' : 'pounds',
+                    'recordedTime' : 1460463900000
+                  }, {
+                    'value' : 187.40,
+                    'units' : 'pounds',
+                    'recordedTime' : 1460502660000
+                  }, {
+                    'value' : 187.00,
+                    'units' : 'pounds',
+                    'recordedTime' : 1460537760000
+                  }, {
+                    'value' : 140.90,
+                    'units' : 'pounds',
+                    'recordedTime' : 1460583540000
+                  }, {
+                    'value' : 185.60,
+                    'units' : 'pounds',
+                    'recordedTime' : 1460628900000
+                  }, {
+                    'value' : 187.40,
+                    'units' : 'pounds',
+                    'recordedTime' : 1460717040000
+                  }, {
+                    'value' : 186.70,
+                    'units' : 'pounds',
+                    'recordedTime' : 1460807940000
+                  }, {
+                    'value' : 187.80,
+                    'units' : 'pounds',
+                    'recordedTime' : 1460972940000
+                  }, {
+                    'value' : 186.70,
+                    'units' : 'pounds',
+                    'recordedTime' : 1460976060000
+                  }, {
+                    'value' : 187.00,
+                    'units' : 'pounds',
+                    'recordedTime' : 1461056400000
+                  }, {
+                    'value' : 187.40,
+                    'units' : 'pounds',
+                    'recordedTime' : 1461069300000
+                  }, {
+                    'value' : 186.30,
+                    'units' : 'pounds',
+                    'recordedTime' : 1461155520000
+                  }, {
+                    'value' : 48.70,
+                    'units' : 'pounds',
+                    'recordedTime' : 1461229200000
+                  }, {
+                    'value' : 48.10,
+                    'units' : 'pounds',
+                    'recordedTime' : 1461244800000
+                  }, {
+                    'value' : 186.50,
+                    'units' : 'pounds',
+                    'recordedTime' : 1461333120000
+                  }, {
+                    'value' : 186.70,
+                    'units' : 'pounds',
+                    'recordedTime' : 1461500400000
+                  }, {
+                    'value' : 186.10,
+                    'units' : 'pounds',
+                    'recordedTime' : 1461592500000
+                  }, {
+                    'value' : 140.70,
+                    'units' : 'pounds',
+                    'recordedTime' : 1461621060000
+                  }, {
+                    'value' : 186.70,
+                    'units' : 'pounds',
+                    'recordedTime' : 1461661200000
+                  }, {
+                    'value' : 186.50,
+                    'units' : 'pounds',
+                    'recordedTime' : 1461747600000
+                  }, {
+                    'value' : 187.00,
+                    'units' : 'pounds',
+                    'recordedTime' : 1461838860000
+                  }, {
+                    'value' : 186.30,
+                    'units' : 'pounds',
+                    'recordedTime' : 1461840180000
+                  }, {
+                    'value' : 185.60,
+                    'units' : 'pounds',
+                    'recordedTime' : 1462021980000
+                  }, {
+                    'value' : 187.20,
+                    'units' : 'pounds',
+                    'recordedTime' : 1462106820000
+                  }, {
+                    'value' : 185.60,
+                    'units' : 'pounds',
+                    'recordedTime' : 1462179600000
+                  }, {
+                    'value' : 186.50,
+                    'units' : 'pounds',
+                    'recordedTime' : 1462189740000
+                  }, {
+                    'value' : 186.70,
+                    'units' : 'pounds',
+                    'recordedTime' : 1462273380000
+                  }, {
+                    'value' : 185.80,
+                    'units' : 'pounds',
+                    'recordedTime' : 1462280100000
+                  }, {
+                    'value' : 186.70,
+                    'units' : 'pounds',
+                    'recordedTime' : 1462352400000
+                  }, {
+                    'value' : 184.70,
+                    'units' : 'pounds',
+                    'recordedTime' : 1463562000000
+                  }, {
+                    'value' : 185.20,
+                    'units' : 'pounds',
+                    'recordedTime' : 1463562000000
+                  }, {
+                    'value' : 184.30,
+                    'units' : 'pounds',
+                    'recordedTime' : 1463648400000
+                  }, {
+                    'value' : 184.10,
+                    'units' : 'pounds',
+                    'recordedTime' : 1463734800000
+                  }, {
+                    'value' : 183.20,
+                    'units' : 'pounds',
+                    'recordedTime' : 1463994000000
+                  }, {
+                    'value' : 149.30,
+                    'units' : 'pounds',
+                    'recordedTime' : 1463994000000
+                  }, {
+                    'value' : 184.70,
+                    'units' : 'pounds',
+                    'recordedTime' : 1463994000000
+                  }, {
+                    'value' : 184.10,
+                    'units' : 'pounds',
+                    'recordedTime' : 1464080400000
+                  }, {
+                    'value' : 184.30,
+                    'units' : 'pounds',
+                    'recordedTime' : 1464166800000
+                  }, {
+                    'value' : 183.40,
+                    'units' : 'pounds',
+                    'recordedTime' : 1464253200000
+                  }, {
+                    'value' : 183.90,
+                    'units' : 'pounds',
+                    'recordedTime' : 1464339600000
+                  }, {
+                    'value' : 183.00,
+                    'units' : 'pounds',
+                    'recordedTime' : 1465117200000
+                  }, {
+                    'value' : 183.60,
+                    'units' : 'pounds',
+                    'recordedTime' : 1465203600000
+                  }, {
+                    'value' : 183.40,
+                    'units' : 'pounds',
+                    'recordedTime' : 1465376400000
+                  }, {
+                    'value' : 183.40,
+                    'units' : 'pounds',
+                    'recordedTime' : 1465376400000
+                  }, {
+                    'value' : 181.90,
+                    'units' : 'pounds',
+                    'recordedTime' : 1465462800000
+                  }, {
+                    'value' : 180.80,
+                    'units' : 'pounds',
+                    'recordedTime' : 1465549200000
+                  }, {
+                    'value' : 139.80,
+                    'units' : 'pounds',
+                    'recordedTime' : 1466067600000
+                  }, {
+                    'value' : 181.90,
+                    'units' : 'pounds',
+                    'recordedTime' : 1466326800000
+                  }, {
+                    'value' : 50.30,
+                    'units' : 'pounds',
+                    'recordedTime' : 1466499600000
+                  }, {
+                    'value' : 49.60,
+                    'units' : 'pounds',
+                    'recordedTime' : 1466758800000
+                  }, {
+                    'value' : 49.60,
+                    'units' : 'pounds',
+                    'recordedTime' : 1466758800000
+                  }, {
+                    'value' : 49.60,
+                    'units' : 'pounds',
+                    'recordedTime' : 1466758800000
+                  }, {
+                    'value' : 181.20,
+                    'units' : 'pounds',
+                    'recordedTime' : 1467018000000
+                  }, {
+                    'value' : 183.20,
+                    'units' : 'pounds',
+                    'recordedTime' : 1467018000000
+                  }, {
+                    'value' : 183.40,
+                    'units' : 'pounds',
+                    'recordedTime' : 1468486800000
+                  }, {
+                    'value' : 184.30,
+                    'units' : 'pounds',
+                    'recordedTime' : 1468746000000
+                  }, {
+                    'value' : 183.60,
+                    'units' : 'pounds',
+                    'recordedTime' : 1468918800000
+                  }, {
+                    'value' : 183.20,
+                    'units' : 'pounds',
+                    'recordedTime' : 1468918800000
+                  }, {
+                    'value' : 184.50,
+                    'units' : 'pounds',
+                    'recordedTime' : 1469005200000
+                  }, {
+                    'value' : 183.00,
+                    'units' : 'pounds',
+                    'recordedTime' : 1469091600000
+                  }, {
+                    'value' : 139.30,
+                    'units' : 'pounds',
+                    'recordedTime' : 1469178000000
+                  }, {
+                    'value' : 182.80,
+                    'units' : 'pounds',
+                    'recordedTime' : 1469782800000
+                  }, {
+                    'value' : 182.80,
+                    'units' : 'pounds',
+                    'recordedTime' : 1469869200000
+                  }, {
+                    'value' : 181.40,
+                    'units' : 'pounds',
+                    'recordedTime' : 1470474000000
+                  }, {
+                    'value' : 182.10,
+                    'units' : 'pounds',
+                    'recordedTime' : 1470560400000
+                  }, {
+                    'value' : 182.30,
+                    'units' : 'pounds',
+                    'recordedTime' : 1470646800000
+                  }, {
+                    'value' : 183.90,
+                    'units' : 'pounds',
+                    'recordedTime' : 1470992400000
+                  }, {
+                    'value' : 183.40,
+                    'units' : 'pounds',
+                    'recordedTime' : 1471078800000
+                  }, {
+                    'value' : 139.80,
+                    'units' : 'pounds',
+                    'recordedTime' : 1471078800000
+                  }, {
+                    'value' : 182.50,
+                    'units' : 'pounds',
+                    'recordedTime' : 1471251600000
+                  }, {
+                    'value' : 182.10,
+                    'units' : 'pounds',
+                    'recordedTime' : 1471338000000
+                  }, {
+                    'value' : 184.10,
+                    'units' : 'pounds',
+                    'recordedTime' : 1471510800000
+                  }, {
+                    'value' : 183.00,
+                    'units' : 'pounds',
+                    'recordedTime' : 1471856400000
+                  }, {
+                    'value' : 182.80,
+                    'units' : 'pounds',
+                    'recordedTime' : 1471942800000
+                  }, {
+                    'value' : 182.80,
+                    'units' : 'pounds',
+                    'recordedTime' : 1472115600000
+                  }, {
+                    'value' : 181.90,
+                    'units' : 'pounds',
+                    'recordedTime' : 1472288400000
+                  }, {
+                    'value' : 182.10,
+                    'units' : 'pounds',
+                    'recordedTime' : 1472461200000
+                  }, {
+                    'value' : 182.10,
+                    'units' : 'pounds',
+                    'recordedTime' : 1472461200000
+                  }, {
+                    'value' : 183.60,
+                    'units' : 'pounds',
+                    'recordedTime' : 1472893200000
+                  }, {
+                    'value' : 182.80,
+                    'units' : 'pounds',
+                    'recordedTime' : 1472979600000
+                  }, {
+                    'value' : 182.30,
+                    'units' : 'pounds',
+                    'recordedTime' : 1473325200000
+                  }, {
+                    'value' : 183.00,
+                    'units' : 'pounds',
+                    'recordedTime' : 1473584400000
+                  }, {
+                    'value' : 183.90,
+                    'units' : 'pounds',
+                    'recordedTime' : 1473930000000
+                  }, {
+                    'value' : 185.00,
+                    'units' : 'pounds',
+                    'recordedTime' : 1474189200000
+                  }, {
+                    'value' : 185.60,
+                    'units' : 'pounds',
+                    'recordedTime' : 1474966800000
+                  }, {
+                    'value' : 188.30,
+                    'units' : 'pounds',
+                    'recordedTime' : 1475658000000
+                  }, {
+                    'value' : 185.80,
+                    'units' : 'pounds',
+                    'recordedTime' : 1475658000000
+                  }, {
+                    'value' : 184.50,
+                    'units' : 'pounds',
+                    'recordedTime' : 1475830800000
+                  }, {
+                    'value' : 184.50,
+                    'units' : 'pounds',
+                    'recordedTime' : 1475830800000
+                  }, {
+                    'value' : 184.50,
+                    'units' : 'pounds',
+                    'recordedTime' : 1475830800000
+                  }, {
+                    'value' : 184.30,
+                    'units' : 'pounds',
+                    'recordedTime' : 1476349200000
+                  }, {
+                    'value' : 183.90,
+                    'units' : 'pounds',
+                    'recordedTime' : 1476435600000
+                  }, {
+                    'value' : 183.40,
+                    'units' : 'pounds',
+                    'recordedTime' : 1477645200000
+                  }, {
+                    'value' : 180.30,
+                    'units' : 'pounds',
+                    'recordedTime' : 1477990800000
+                  }, {
+                    'value' : 183.20,
+                    'units' : 'pounds',
+                    'recordedTime' : 1478336400000
+                  }, {
+                    'value' : 180.60,
+                    'units' : 'pounds',
+                    'recordedTime' : 1478509200000
+                  }, {
+                    'value' : 49.60,
+                    'units' : 'pounds',
+                    'recordedTime' : 1478595600000
+                  }, {
+                    'value' : 179.50,
+                    'units' : 'pounds',
+                    'recordedTime' : 1478854800000
+                  }, {
+                    'value' : 181.20,
+                    'units' : 'pounds',
+                    'recordedTime' : 1478941200000
+                  }, {
+                    'value' : 178.40,
+                    'units' : 'pounds',
+                    'recordedTime' : 1479114000000
+                  }, {
+                    'value' : 180.60,
+                    'units' : 'pounds',
+                    'recordedTime' : 1479286800000
+                  }, {
+                    'value' : 181.70,
+                    'units' : 'pounds',
+                    'recordedTime' : 1479632400000
+                  }, {
+                    'value' : 181.70,
+                    'units' : 'pounds',
+                    'recordedTime' : 1479718800000
+                  }, {
+                    'value' : 181.40,
+                    'units' : 'pounds',
+                    'recordedTime' : 1479978000000
+                  }, {
+                    'value' : 49.60,
+                    'units' : 'pounds',
+                    'recordedTime' : 1479978000000
+                  }, {
+                    'value' : 182.80,
+                    'units' : 'pounds',
+                    'recordedTime' : 1480323600000
+                  }, {
+                    'value' : 180.60,
+                    'units' : 'pounds',
+                    'recordedTime' : 1480496400000
+                  }, {
+                    'value' : 181.00,
+                    'units' : 'pounds',
+                    'recordedTime' : 1480842000000
+                  }, {
+                    'value' : 181.90,
+                    'units' : 'pounds',
+                    'recordedTime' : 1480928400000
+                  }, {
+                    'value' : 219.00,
+                    'units' : 'pounds',
+                    'recordedTime' : 1484164920000
+                  }, {
+                    'value' : 218.50,
+                    'units' : 'pounds',
+                    'recordedTime' : 1484254320000
+                  }, {
+                    'value' : 218.00,
+                    'units' : 'pounds',
+                    'recordedTime' : 1484340780000
+                  }, {
+                    'value' : 218.00,
+                    'units' : 'pounds',
+                    'recordedTime' : 1484673780000
+                  }, {
+                    'value' : 219.30,
+                    'units' : 'pounds',
+                    'recordedTime' : 1485194580000
+                  }, {
+                    'value' : 219.00,
+                    'units' : 'pounds',
+                    'recordedTime' : 1485280980000
+                  }, {
+                    'value' : 219.10,
+                    'units' : 'pounds',
+                    'recordedTime' : 1485367440000
+                  }, {
+                    'value' : 218.90,
+                    'units' : 'pounds',
+                    'recordedTime' : 1485453840000
+                  }, {
+                    'value' : 218.50,
+                    'units' : 'pounds',
+                    'recordedTime' : 1485540240000
+                  }, {
+                    'value' : 217.50,
+                    'units' : 'pounds',
+                    'recordedTime' : 1485722100000
+                  }, {
+                    'value' : 216.00,
+                    'units' : 'pounds',
+                    'recordedTime' : 1485981360000
+                  } ]
+                }
+
+
+        "
+    End Function
+
     Public Class BodyTraceFeed
 
 
@@ -61,7 +588,6 @@ Public Class BodyTraceDashboard
 
     End Class
 
-
     Public Class BodyTrace_Configuration
 
         Public Property GetCallURL As String = "https://us.data.bodytrace.com/1/device/{%1}/datamessages"
@@ -71,8 +597,6 @@ Public Class BodyTraceDashboard
         Public Property Password As String = "iq28T22ytyq9izfowhfeg"
 
     End Class
-
-
 
     Private Sub btnConnect_Click(sender As Object, e As EventArgs) Handles btnConnect.Click
 
@@ -156,6 +680,5 @@ Public Class BodyTraceDashboard
         Return nDateTime
 
     End Function
-
 
 End Class
